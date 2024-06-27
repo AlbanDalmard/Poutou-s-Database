@@ -51,3 +51,27 @@ CREATE TABLE Client (
     Historique_de_transactions CLOB,
     CONSTRAINT unique_email UNIQUE (Email)
 );
+
+# Remplissage des tables
+
+#MySQL
+
+INSERT INTO Client (Nom, Email, Téléphone, Pays, Ville, Historique_de_transactions)
+VALUES ('John Doe', 'john.doe@example.com', '123-456-7890', 'USA', 'New York', 'Transaction1: 1000 USD, Transaction2: 500 USD');
+
+INSERT INTO Client (Nom, Email, Téléphone, Pays, Ville, Historique_de_transactions)
+VALUES ('Jane Smith', 'jane.smith@example.com', '234-567-8901', 'Canada', 'Toronto', 'Transaction1: 2000 CAD, Transaction2: 1500 CAD');
+
+INSERT INTO Client (Nom, Email, Téléphone, Pays, Ville, Historique_de_transactions)
+VALUES ('Alice Johnson', 'alice.johnson@example.com', '345-678-9012', 'UK', 'London', 'Transaction1: 1000 GBP, Transaction2: 700 GBP');
+
+# Oracle
+
+INSERT INTO Client (Nom, Email, Téléphone, Pays, Ville, Historique_de_transactions)
+VALUES ('Robert Brown', 'robert.brown@example.com', '456-789-0123', 'Australia', 'Sydney', 'Transaction1: 3000 AUD, Transaction2: 2500 AUD');
+
+INSERT INTO Client (Nom, Email, Téléphone, Pays, Ville, Historique_de_transactions)
+VALUES ('Maria Garcia', 'maria.garcia@example.com', '567-890-1234', 'Spain', 'Madrid', 'Transaction1: 1500 EUR, Transaction2: 1200 EUR');
+
+INSERT INTO Client (Nom, Email, Téléphone, Pays, Ville, Historique_de_transactions)
+VALUES ('Li Wei', 'li.wei@example.com', '678-901-2345', 'China', 'Beijing', 'Transaction1: 8000 CNY, Transaction2: 7000 CNY');
