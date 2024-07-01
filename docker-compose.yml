@@ -1,0 +1,14 @@
+version: "3.5"
+services:
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+    container_name: "mysql-1"
+    ports:
+      - "3306:3306"
+  oracle:
+    image: oracle:18c
+    container_name: "oracle-1"
+    ports:
+      - "1521:1521"

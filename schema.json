@@ -1,0 +1,33 @@
+{
+    "customer.customers1": {
+      "transaction": false,
+      "partition-key": [
+        "customer_id"
+      ],
+      "columns": {
+        "customer_id": "INT",
+        "name": "TEXT",
+        "email": "TEXT",
+        "phone": "INT",
+        "country": "TEXT",
+        "city": "TEXT",
+        "transaction_history": "TEXT"
+      }
+    },
+    "customer.customers2": {
+        "transaction": false,
+        "partition-key": [
+          "customer_id"
+        ],
+        "columns": {
+          "customer_id": "INT",
+          "name": "TEXT",
+          "email": "TEXT",
+          "phone": "INT",
+          "country": "TEXT",
+          "city": "TEXT",
+          "transaction_history": "TEXT"
+        }
+      }
+  }
+  
