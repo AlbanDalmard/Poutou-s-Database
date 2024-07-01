@@ -8,7 +8,7 @@ services:
     ports:
       - "3306:3306"
   oracle:
-    image: oracle:18c
+    image: oracleinanutshell/oracle-xe-11g
     container_name: "oracle-1"
     ports:
       - "1521:1521"
