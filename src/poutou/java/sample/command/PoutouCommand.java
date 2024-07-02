@@ -12,7 +12,7 @@ import picocli.CommandLine.Option;
       LoadInitialDataCommand.class,
       GetCustomerInfoCommand.class,
     })
-public class poutouCommand implements Runnable {
+public class PoutouCommand implements Runnable {
 
   @Option(
       names = {"-h", "--help"},
