@@ -20,7 +20,7 @@
           "customer_id": "INT",
           "name": "TEXT",
           "city": "TEXT",
-          "transaction_history": "TEXT"
+          "transaction_history": "INT"
         }
       }
   }

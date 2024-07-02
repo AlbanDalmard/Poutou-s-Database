@@ -75,3 +75,10 @@ VALUES ('Maria Garcia', 'maria.garcia@example.com', '567-890-1234', 'Spain', 'Ma
 
 INSERT INTO Client (Nom, Email, Téléphone, Pays, Ville, Historique_de_transactions)
 VALUES ('Li Wei', 'li.wei@example.com', '678-901-2345', 'China', 'Beijing', 'Transaction1: 8000 CNY, Transaction2: 7000 CNY');
+
+---
+# lancer scalardb
+```
+sudo docker-compose up -d
+java -jar scalardb-schema-loader-3.9.6.jar --config database.properties --schema-file schema.json --coordinator
+```
