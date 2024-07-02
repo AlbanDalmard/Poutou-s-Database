@@ -82,3 +82,15 @@ VALUES ('Li Wei', 'li.wei@example.com', '678-901-2345', 'China', 'Beijing', 'Tra
 sudo docker-compose up -d
 java -jar scalardb-schema-loader-3.9.6.jar --config database.properties --schema-file schema.json --coordinator
 ```
+pour fermer mysql
+```
+sudo systemctl stop  mysql
+```
+pour fermer scalardb
+```
+sudo docker-compose down
+```
+pour voir les processus qui utilisent le port 3306
+```
+sudo lsof -i :3306
+```
