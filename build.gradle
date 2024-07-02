@@ -3,7 +3,7 @@ plugins {
     id 'application'
 }
 
-group 'org.sample'
+group 'org.poutou'
 version '1.0-SNAPSHOT'
 
 repositories {
@@ -16,10 +16,10 @@ dependencies {
 }
 
 application {
-    mainClassName = 'sample.command.SampleCommand'
+    mainClassName = 'poutou.command.PoutouCommand'
 }
 
-archivesBaseName = "sample"
+archivesBaseName = "poutou"
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
