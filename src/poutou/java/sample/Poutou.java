@@ -19,7 +19,7 @@ public class Poutou implements AutoCloseable{
 
     private final DistributedTransactionManager manager;
 
-    public Poutou() throws IOException {
+    public Sample() throws IOException {
         // Create a transaction manager object
         TransactionFactory factory = TransactionFactory.create("database.properties");
         manager = factory.getTransactionManager();
@@ -94,6 +94,57 @@ public class Poutou implements AutoCloseable{
                 }
             }
     }
+
+    public String getCustomerInfo(int customerId) throws TransactionException {
+      DistributedTransaction transaction = null;
+      try {
+        // Start a transaction
+        transaction = manager.start();
+  
+        // Retrieve the customer info for the specified customer ID from the customers table
+        Optional<Result> customer =
+            transaction.get(
+                Get.newBuilder()
+                    .namespace("customer")
+                    .table("customers1")
+                    .partitionKey(Key.ofInt("customer_id", customerId))
+                    .build());
+        
+        if (!customer.isPresent()) {
+          // If the customer info the specified customer ID doesn't exist, try to retrieve it from the other table
+          customer =
+              transaction.get(
+                  Get.newBuilder()
+                      .namespace("customer")
+                      .table("customers2")
+                      .partitionKey(Key.ofInt("customer_id", customerId))
+                      .build());
+        }
+
+        if (!customer.isPresent()) {
+          // If the customer info the specified customer ID doesn't exist, throw an exception
+          throw new RuntimeException("Customer not found");
+        }
+  
+        // Commit the transaction (even when the transaction is read-only, we need to commit)
+        transaction.commit();
+  
+        // Return the customer info as a JSON format
+        return String.format(
+            "{\"id\": %d, \"name\": \"%s\", \"city\": %d, \"number_transactions\": %d}",
+            customerId,
+            customer.get().getText("name"),
+            customer.get().getText("city"),
+            customer.get().getInt("number_transactions"));
+      } catch (Exception e) {
+        if (transaction != null) {
+          // If an error occurs, abort the transaction
+          transaction.abort();
+        }
+        throw e;
+      }
+    }
+
 
     @Override
     public void close() {
