@@ -7,11 +7,8 @@
       "columns": {
         "customer_id": "INT",
         "name": "TEXT",
-        "email": "TEXT",
-        "phone": "INT",
-        "country": "TEXT",
         "city": "TEXT",
-        "transaction_history": "TEXT"
+        "transaction_history": "INT"
       }
     },
     "customer.customers2": {
@@ -22,9 +19,6 @@
         "columns": {
           "customer_id": "INT",
           "name": "TEXT",
-          "email": "TEXT",
-          "phone": "INT",
-          "country": "TEXT",
           "city": "TEXT",
           "transaction_history": "TEXT"
         }
