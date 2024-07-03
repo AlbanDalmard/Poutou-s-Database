@@ -56,7 +56,7 @@ public class Poutou implements AutoCloseable{
                 Optional<Result> customer =
                     transaction.get(
                         Get.newBuilder()
-                            .namespace("customer")
+                            .namespace("customers")
                             .table("customers1")
                             .partitionKey(Key.ofInt("customer_id", customerId))
                             .build());
@@ -64,7 +64,7 @@ public class Poutou implements AutoCloseable{
                     System.out.println("Customer not found in customers1 table");
                     transaction.put(
                         Put.newBuilder()
-                            .namespace("customer")
+                            .namespace("customers")
                             .table("customers1")
                             .partitionKey(Key.ofInt("customer_id", customerId))
                             .textValue("name", name)
@@ -77,14 +77,14 @@ public class Poutou implements AutoCloseable{
                 Optional<Result> customer =
                     transaction.get(
                         Get.newBuilder()
-                            .namespace("customer")
+                            .namespace("customers")
                             .table("customers2")
                             .partitionKey(Key.ofInt("customer_id", customerId))
                             .build());
                 if (!customer.isPresent()) {
                     transaction.put(
                         Put.newBuilder()
-                            .namespace("customer")
+                            .namespace("customers")
                             .table("customers2")
                             .partitionKey(Key.ofInt("customer_id", customerId))
                             .textValue("name", name)
@@ -121,7 +121,7 @@ public class Poutou implements AutoCloseable{
         Optional<Result> customer =
             transaction.get(
                 Get.newBuilder()
-                    .namespace("customer")
+                    .namespace("customers")
                     .table("customers1")
                     .partitionKey(Key.ofInt("customer_id", customerId))
                     .build());
@@ -131,7 +131,7 @@ public class Poutou implements AutoCloseable{
           customer =
               transaction.get(
                   Get.newBuilder()
-                      .namespace("customer")
+                      .namespace("customers")
                       .table("customers2")
                       .partitionKey(Key.ofInt("customer_id", customerId))
                       .build());
