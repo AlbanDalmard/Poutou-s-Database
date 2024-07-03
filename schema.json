@@ -1,6 +1,6 @@
 {
     "customer.customers1": {
-      "transaction": false,
+      "transaction": true,
       "partition-key": [
         "customer_id"
       ],
@@ -12,7 +12,7 @@
       }
     },
     "customer.customers2": {
-        "transaction": false,
+        "transaction": true,
         "partition-key": [
           "customer_id"
         ],
