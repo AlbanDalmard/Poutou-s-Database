@@ -55,6 +55,7 @@ public class Poutou implements AutoCloseable{
         int numberTransactions)
         throws TransactionException {
             if (numDatabase == 0) {
+                System.out.println("Loading customer info to customers1 table");
                 Optional<Result> customer =
                     transaction.get(
                         Get.newBuilder()
@@ -63,6 +64,7 @@ public class Poutou implements AutoCloseable{
                             .partitionKey(Key.ofInt("customer_id", customerId))
                             .build());
                 if (!customer.isPresent()) {
+                    System.out.println("Customer not found in customers1 table");
                     transaction.put(
                         Put.newBuilder()
                             .namespace("customer")
@@ -72,6 +74,7 @@ public class Poutou implements AutoCloseable{
                             .textValue("city", city)
                             .intValue("number_transactions", numberTransactions)
                             .build());
+                    System.out.println("Customer info loaded to customers1 table");
                 }
             } else {
                 Optional<Result> customer =
