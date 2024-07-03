@@ -29,6 +29,6 @@ public class PoutouCommand implements Runnable {
   }
 
   public static void main(String[] args) {
-    new CommandLine(new poutouCommand()).execute(args);
+    new CommandLine(new PoutouCommand()).execute(args);
   }
 }
