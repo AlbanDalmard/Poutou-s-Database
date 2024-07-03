@@ -52,7 +52,7 @@ public class Poutou implements AutoCloseable{
         int numberTransactions)
         throws TransactionException {
             if (numDatabase == 0) {
-                System.out.println("Loading customer info to customers1 table");
+                System.out.println("Loading customer info to customers1 table: customer_id=" + customerId + ", name=" + name + ", city=" + city + ", number_transactions=" + numberTransactions);
                 Optional<Result> customer =
                     transaction.get(
                         Get.newBuilder()
