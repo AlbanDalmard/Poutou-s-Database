@@ -104,6 +104,7 @@ public class Poutou implements AutoCloseable{
         transaction = manager.start();
         loadCustomerIfNotExists(transaction, 0, customerId, name, city, numberTransactions);
         transaction.commit();
+        System.out.println("Customer added successfully");
       } catch (TransactionException e) {
         if (transaction != null) {
           transaction.abort();
