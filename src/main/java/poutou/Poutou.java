@@ -95,6 +95,20 @@ public class Poutou implements AutoCloseable{
             }
     }
 
+    public void addCustomer(int customerId, String name, String city, int numberTransactions) throws TransactionException {
+      DistributedTransaction transaction = null;
+      try {
+        transaction = manager.start();
+        loadCustomerIfNotExists(transaction, 0, customerId, name, city, numberTransactions);
+        transaction.commit();
+      } catch (TransactionException e) {
+        if (transaction != null) {
+          transaction.abort();
+        }
+        throw e;
+      }
+    }
+
     public String getCustomerInfo(int customerId) throws TransactionException {
       DistributedTransaction transaction = null;
       try {
