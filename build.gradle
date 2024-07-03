@@ -14,9 +14,8 @@ dependencies {
     implementation 'com.scalar-labs:scalardb:3.9.1'
     implementation 'info.picocli:picocli:4.7.1'
 }
-
 application {
-    mainClassName = 'poutou.command.PoutouCommand'
+    mainClass.set('poutou.command.PoutouCommand')
 }
 
 archivesBaseName = "poutou"

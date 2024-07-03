@@ -5,15 +5,11 @@ import com.scalar.db.api.DistributedTransactionManager;
 import com.scalar.db.api.Get;
 import com.scalar.db.api.Put;
 import com.scalar.db.api.Result;
-import com.scalar.db.api.Scan;
 import com.scalar.db.exception.transaction.TransactionException;
 import com.scalar.db.io.Key;
 import com.scalar.db.service.TransactionFactory;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 public class Poutou implements AutoCloseable{
 
