@@ -29,6 +29,7 @@ public class Poutou implements AutoCloseable{
         DistributedTransaction transaction = null;
         try {
           transaction = manager.start();
+          System.out.println("transaction id: " + transaction.getId());
           loadCustomerIfNotExists(transaction, 0, 1, "Yamada Taro", "Tokyo", 3);
           loadCustomerIfNotExists(transaction, 0, 2, "Suzuki Jiro", "Osaka", 2);
           loadCustomerIfNotExists(transaction, 0, 3, "Tanaka Saburo", "Nagoya", 1);
@@ -102,6 +103,7 @@ public class Poutou implements AutoCloseable{
       DistributedTransaction transaction = null;
       try {
         transaction = manager.start();
+        System.out.println("transaction id: " + transaction.getId());
         loadCustomerIfNotExists(transaction, 0, customerId, name, city, numberTransactions);
         transaction.commit();
         System.out.println("Customer added successfully");
