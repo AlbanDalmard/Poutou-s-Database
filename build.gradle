@@ -13,6 +13,7 @@ repositories {
 dependencies {
     implementation 'com.scalar-labs:scalardb:3.9.1'
     implementation 'info.picocli:picocli:4.7.1'
+    implementation 'org.slf4j:slf4j-simple:1.7.36'
 }
 application {
     mainClass.set('poutou.command.PoutouCommand')
