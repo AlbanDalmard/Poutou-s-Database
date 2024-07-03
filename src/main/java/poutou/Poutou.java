@@ -19,7 +19,7 @@ public class Poutou implements AutoCloseable{
 
     private final DistributedTransactionManager manager;
 
-    public Sample() throws IOException {
+    public Poutou() throws IOException {
         // Create a transaction manager object
         TransactionFactory factory = TransactionFactory.create("database.properties");
         manager = factory.getTransactionManager();

@@ -3,7 +3,7 @@ package poutou.command;
 import java.util.concurrent.Callable;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Parameters;
-import sample.Sample;
+import poutou.Poutou;
 
 @Command(name = "GetCustomerInfo", description = "Get customer information")
 public class GetCustomerInfoCommand implements Callable<Integer> {
@@ -13,8 +13,8 @@ public class GetCustomerInfoCommand implements Callable<Integer> {
 
   @Override
   public Integer call() throws Exception {
-    try (Sample sample = new Sample()) {
-      System.out.println(sample.getCustomerInfo(customerId));
+    try (Poutou poutou = new Poutou()) {
+      System.out.println(poutou.getCustomerInfo(customerId));
     }
     return 0;
   }
