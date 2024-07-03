@@ -24,6 +24,7 @@ public class AddCustomerCommand implements Callable<Integer> {
   @Override
   public Integer call() throws Exception {
     try (Poutou poutou = new Poutou()) {
+      System.out.println("Adding customer...");
       poutou.addCustomer(customerId, customerName, customerCity, customerNumberTransactions);
       System.out.println("Customer added successfully");
       System.out.println(poutou.getCustomerInfo(customerId));
