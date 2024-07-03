@@ -11,6 +11,7 @@ import picocli.CommandLine.Option;
     subcommands = {
       LoadInitialDataCommand.class,
       GetCustomerInfoCommand.class,
+      AddCustomerCommand.class,
     })
 public class PoutouCommand implements Runnable {
 
