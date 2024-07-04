@@ -1,5 +1,5 @@
 {
-    "customers.customers1": {
+    "customers.customers3": {
       "transaction": true,
       "partition-key": [
         "customer_id"
@@ -11,7 +11,7 @@
         "transaction_history": "INT"
       }
     },
-    "customers.customers2": {
+    "customers.customers4": {
         "transaction": true,
         "partition-key": [
           "customer_id"
