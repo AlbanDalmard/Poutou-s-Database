@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Operation Success</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Operation Success</h1>
+    </header>
+    <section>
+        <p th:text="${message}"></p>
+        <a href="/addCustomer">Add another customer</a>
+        <br>
+        <a href="/searchCustomer">Search another customer</a>
+    </section>
+</body>
+</html>
