@@ -13,3 +13,11 @@ java -jar scalardb-schema-loader-3.9.6.jar --config database.properties --schema
 ```
 
 The AddCustomer still raises an error, but the GetCustomerInfo works fine.
+
+## Launch GUI commands
+
+```
+cd ./demo
+mvn spring-boot:run
+```
+If you have on the building of Spring, then run Java on the DemoApplication.java file in src/main/java/com/example/demo.
