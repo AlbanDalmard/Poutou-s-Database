@@ -20,4 +20,4 @@ The AddCustomer still raises an error, but the GetCustomerInfo works fine.
 cd ./demo
 mvn spring-boot:run
 ```
-If you have on the building of Spring, then run Java on the DemoApplication.java file in src/main/java/com/example/demo.
+If you have error on the building of Spring, then run Java on the DemoApplication.java file in src/main/java/com/example/demo.
