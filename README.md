@@ -21,3 +21,5 @@ cd ./demo
 mvn spring-boot:run
 ```
 If you have error on the building of Spring, then run Java on the DemoApplication.java file in src/main/java/com/example/demo.
+
+You can then access to the GUI through your [local host ](http://localhost:8080/).
